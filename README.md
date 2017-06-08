@@ -1,6 +1,9 @@
 ## About
 Display the worst service status of a host on OpenStreetMap.
 
+![OSM](https://github.com/cstegm/icingaweb2-module-osm/raw/master/screenshots/osm1.png)
+![OSM](https://github.com/cstegm/icingaweb2-module-osm/raw/master/screenshots/osm2.png)
+
 ## Requirements
 
 * Icinga Web 2 (&gt;= 2.0.0)
