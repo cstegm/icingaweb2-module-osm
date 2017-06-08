@@ -39,7 +39,7 @@ To get Geolocation data, best use a website like http://www.latlong.net or use y
 
 To get the hosts displayd on the map you have to add to each host configuration 
 ```
-vars.geolocation = "longitude,latitude"
+vars.geolocation = "<longitude>,<latitude>"
 ```
 
 ## Thanks
