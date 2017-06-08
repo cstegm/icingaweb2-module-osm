@@ -1,5 +1,3 @@
-#Icinga Web 2 OSM Module
-
 ## About
 Display the worst service status of a host on OpenStreetMap.
 
@@ -41,16 +39,3 @@ To get the hosts displayd on the map you have to add to each host configuration
 vars.geolocation = "<longitude>,latitude"
 ```
 To get Geolocation data, best use a website like http://www.latlong.net or use you smartphone :)
-
-
-
-## Refresh Timer
-
-To change the default timer of 5 minutes to something that fits you, change in file globe/public/js/module.js
-```
-                // Default refresh is 5 min
-                300000
-                // End Default refresh
-```
-
-Time is in milliseconds!
