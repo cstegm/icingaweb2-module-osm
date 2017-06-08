@@ -38,4 +38,6 @@ To get the hosts displayd on the map you have to add to each host configuration
 ```
 vars.geolocation = "<longitude>,latitude"
 ```
-To get Geolocation data, best use a website like http://www.latlong.net or use you smartphone :)
+
+## Thanks
+This module borrows a lot from https://github.com/Mikesch-mp/icingaweb2-module-globe
