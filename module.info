@@ -1,0 +1,6 @@
+Name : OSM
+Version: 1.0.0
+Depends: Monitoring
+Description: OpenStreetMap
+ OpenStreetMap Visualization
+ A lot of Code is burrowed from Carstens Icingaweb2 Globe Module: https://github.com/Mikesch-mp/icingaweb2-module-globe 
