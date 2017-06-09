@@ -45,25 +45,37 @@ class DataController extends Controller
 			foreach ($query2 as $row2) {
                     switch ($row2->service_state){
                         case 0:
-                            $state="<td style='background-color: #4b7; '>OK</td>";
+                            $state="<td style='background-color: #4b7; '>OK";
                             break;;
                         case 1:
-                            $state="<td style='background-color: #fa4; '>WARNING</td>";
+                            $state="<td style='background-color: #fa4; '>WARNING";
+                            if($worststatus<1 || $worststatus==99){
+                                $worststatus=1;
+                            }
                             break;;
                         case 2:
-                            $state="<td style='background-color: #f56; '>CRITICAL</td>";
+                            $state="<td style='background-color: #f56; '>CRITICAL";
+                            if($worststatus<2 || $worststatus==3 || $worststatus==99){
+                                $worststatus=2;
+                            }
                             break;;
                         case 3:
-                            $state="<td style='background-color: #a4f; '>UNKNOWN</td>";
+                            $state="<td style='background-color: #a4f; '>UNKNOWN";
+                            if($worststatus<=1 || $worststatus==99){
+                                $worststatus=3;
+                            }
+                            if($worststatus==2){
+                                $worststatus=2;
+                            }
                             break;;
                         case 99:
-                            $state="<td style='background-color: blue; '>PENDING</td>";
+                            $state="<td style='background-color: blue; '>PENDING";
+                            if($worststatus==0){
+                                $worststatus=99;
+                            }
                             break;;
                     }
-                    if($row2->service_state>$worststatus){
-                        $worststatus=$row2->service_state;
-                    }
-                    $okhosts.='<tr>'.$state.'<td><a href=\'monitoring/service/show?host='.$row->host_name.'&service='.$row2->service.'\' >'.$row2->service_display_name.'</td></tr>';
+                    $okhosts.='<tr>'.$state.' '.$worststatus.'</td><td><a href=\'monitoring/service/show?host='.$row->host_name.'&service='.$row2->service.'\' >'.$row2->service_display_name.'</td></tr>';
 			}
 					$okhosts.='</table>Location: '.$row->varvalue.'",'."\n"
                     ."\t".'"worststatus" : "'.$worststatus.'"'."\n"
