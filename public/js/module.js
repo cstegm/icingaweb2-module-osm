@@ -39,7 +39,7 @@
                 this,
 		// Default refresh is 5 min
                 //300000
-		30000
+		        30000
 		// End Default refresh
             );
             return this;
@@ -82,7 +82,7 @@
             		    opacity: opacity, fillOpacity: fillopacity,
             	    };
             	    var geojsonMarkerOptionsPending = {
-            		    radius: radius, fillColor: "#0000ff",
+            		    radius: radius, fillColor: "#7af",
             		    color: "#000", weight: 1,
             		    opacity: opacity, fillOpacity: fillopacity,
             	    };
@@ -124,7 +124,7 @@
 	onRenderedContainer: function(event) {
             xhri = new XMLHttpRequest();
             xhri.open('GET', 'osm/conf', true);
-	    var confdata; 
+	        var confdata; 
             var hmmm=this;
             xhri.onreadystatechange = function(e) {
             if (xhri.readyState === 4) {
@@ -133,6 +133,7 @@
 	        		var view=[];
         			view[0]=parseFloat(confdata.x);	
         			view[1]=parseFloat(confdata.y);
+                    radius=confdata.radius;
         			var zoom=parseInt(confdata.zoom)	
         			map = L.map('map').setView(view, zoom);
         			L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
