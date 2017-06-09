@@ -22,6 +22,7 @@ Setting            | Description
 latitude           | **Required** Latitude
 longitude          | **Required** Longtidue
 zoom               | **Required** Open Street Map Zoom Level
+radius               | **Required** Radius of displayed Markers
 
 Example:
 ```
@@ -31,7 +32,7 @@ vim /etc/icingaweb2/modules/osm/config.ini
 latitude="51.418568"
 longitude="6.884523"
 zoom="8"
-
+radius"12"
 ```
 To get Geolocation data, best use a website like http://www.latlong.net or use you smartphone :)
 
