@@ -75,7 +75,9 @@ class DataController extends Controller
                             }
                             break;;
                     }
-                    $okhosts.='<tr>'.$state.' '.$worststatus.'</td><td><a href=\'monitoring/service/show?host='.$row->host_name.'&service='.$row2->service.'\' >'.$row2->service_display_name.'</td></tr>';
+                    //$okhosts.='<tr>'.$state.' '.$worststatus.'</td><td><a href=\'monitoring/service/show?host='.$row->host_name.'&service='.$row2->service.'\' >'.$row2->service_display_name.'</td></tr>';
+		    $okhosts.='<tr>'.$state.'</td><td><a href=\'monitoring/service/show?host='.$row->host_name.'&service='.$row2->service.'\' >'.$row2->service_display_name.'</td></tr>';
+
 			}
 					$okhosts.='</table>Location: '.$row->varvalue.'",'."\n"
                     ."\t".'"worststatus" : "'.$worststatus.'"'."\n"
