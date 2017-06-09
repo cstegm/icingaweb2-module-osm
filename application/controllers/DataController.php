@@ -69,7 +69,7 @@ class DataController extends Controller
                             }
                             break;;
                         case 99:
-                            $state="<td style='background-color: blue; '>PENDING";
+                            $state="<td style='background-color: #7af; '>PENDING";
                             if($worststatus==0){
                                 $worststatus=99;
                             }
