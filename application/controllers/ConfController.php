@@ -11,8 +11,9 @@ class ConfController extends Controller
 	$viewx = $this->Config()->get('osm', 'latitude');
 	$viewy = $this->Config()->get('osm', 'longitude');
 	$zoom = $this->Config()->get('osm', 'zoom');
+	$radius = $this->Config()->get('osm', 'radius');
 
-	echo '{"x":"'.$viewx.'","y":"'.$viewy.'","zoom":"'.$zoom.'"}';
+	echo '{"x":"'.$viewx.'","y":"'.$viewy.'","zoom":"'.$zoom.'","radius":"'.$radius.'"}';
 	exit;
     }
 }
