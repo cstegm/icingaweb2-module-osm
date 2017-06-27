@@ -131,7 +131,7 @@ class DataController extends Controller {
 			foreach ($hosts as $host => $hostvals){
 				//echo " - $host : " . $hostvals["status"] . "<br>";
       				//$okhosts.='<b>Hostname: <a href=\'monitoring/host/show?host='.$row->host_name.'\' >'
-				$okhosts.="<tr>".$this->htmlstatus($hostvals["status"])."</td><td><a href='monitorin/host/show?host=$host'>$host</a></td></tr>";
+				$okhosts.="<tr>".$this->htmlstatus($hostvals["status"])."</td><td><a href='monitoring/host/show?host=$host'>$host</a></td></tr>";
 			}
 		}
 		$okhosts.='</table>Location: '.$row->varvalue.'",'."\n"
