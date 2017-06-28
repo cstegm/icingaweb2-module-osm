@@ -98,6 +98,7 @@ class DataController extends Controller {
         	}
 	}
 	foreach($geoarray as $location => $hosts){
+		$worststatus=0;
 		$anz = count($hosts);
 		//echo "$location : $anz <br>"; 
 		$okhosts.="\n".'{'."\n"
@@ -124,6 +125,7 @@ class DataController extends Controller {
 						.$servicevals["display_name"].'</td></tr>';
 					//echo " - - $service : " . $servicevals["status"]."<br>";
 				}
+				$worststatus=$this->worststatus($worststatus,$hostvals["status"]);
 			}
 		}else{
 			// nur Hosts anzeigen
@@ -132,6 +134,7 @@ class DataController extends Controller {
 				//echo " - $host : " . $hostvals["status"] . "<br>";
       				//$okhosts.='<b>Hostname: <a href=\'monitoring/host/show?host='.$row->host_name.'\' >'
 				$okhosts.="<tr>".$this->htmlstatus($hostvals["status"])."</td><td><a href='monitoring/host/services?host=$host'>$host</a></td></tr>";
+				$worststatus=$this->worststatus($worststatus,$hostvals["status"]);
 			}
 		}
 		$okhosts.='</table>Location: '.$row->varvalue.'",'."\n"
