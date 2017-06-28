@@ -121,8 +121,8 @@ class DataController extends Controller {
 						continue;
 					}
 					$okhosts.='<tr>'.$this->htmlstatus($servicevals["status"]).'</td><td>'
-						.'<a href=\'monitoring/service/show?host='.$host.'&service='.$service.'\' >'
-						.$servicevals["display_name"].'</td></tr>';
+						.'<a href=\'monitoring/service/show?host='.$host.'&service='.$service.'\' target=\'_blank\' >'
+						.$servicevals["display_name"].'</a></td></tr>';
 					//echo " - - $service : " . $servicevals["status"]."<br>";
 				}
 				$worststatus=$this->worststatus($worststatus,$hostvals["status"]);
@@ -133,7 +133,7 @@ class DataController extends Controller {
 			foreach ($hosts as $host => $hostvals){
 				//echo " - $host : " . $hostvals["status"] . "<br>";
       				//$okhosts.='<b>Hostname: <a href=\'monitoring/host/show?host='.$row->host_name.'\' >'
-				$okhosts.="<tr>".$this->htmlstatus($hostvals["status"])."</td><td><a href='monitoring/host/services?host=$host'>$host</a></td></tr>";
+				$okhosts.="<tr>".$this->htmlstatus($hostvals["status"])."</td><td><a href='monitoring/host/services?host=$host' target='_blank'>$host</a></td></tr>";
 				$worststatus=$this->worststatus($worststatus,$hostvals["status"]);
 			}
 		}
